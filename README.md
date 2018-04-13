@@ -1,24 +1,24 @@
-#Git命令参考手册(文本版) [https://www.oschina.net/question/156344_148084]
+# Git命令参考手册(文本版) [https://www.oschina.net/question/156344_148084]
 
 
-#git学习视频，以下笔记来自视频米斯特吴上课，讲课的话。我给记录下来了。
+# git学习视频，以下笔记来自视频米斯特吴上课，讲课的话。我给记录下来了。
 
 
-#视频地址：[https://ke.qq.com/course/237926]
+# 视频地址：[https://ke.qq.com/course/237926]
 
 
-#git学习笔记
+# git学习笔记
 
-// 什么是git
-// 版本管理控制工具（vcs）
+什么是git
+版本管理控制工具（vcs）
 
-// 1.分布式版本控制
+1. 分布式版本控制
 
-// 2.多个开发人员协调工作
+2. 多个开发人员协调工作
 
-// 3.有效监听谁做的修改
+3. 有效监听谁做的修改
 
-// 4.本地及远程操作
+4. 本地及远程操作
 
 
 // 在公司里面往往是做项目，一个项目是一个人完成
@@ -47,50 +47,51 @@
 // 把本地的代码上传到，git远程仓库里面去。
 
 
-// git的基础命令行操作
-// 1.git init       初始化本地git仓库
-// 2.git add<file>  添加文件
-// 3.git status     查看状态
-// 4.git commit     提交，提交到本地的git仓库里
-// 5.git push       推送到仓库，推送到远程仓库
-// 6.git pull       从远程仓库拉取数据
-// 7.git clone      从远程仓库拷贝数据
+#### git的基础命令行操作
+```s
+$  git init       初始化本地git仓库
+$  git add<file>  添加文件
+$  git status     查看状态
+$  git commit     提交，提交到本地的git仓库里
+$  git push       推送到仓库，推送到远程仓库
+$  git pull       从远程仓库拉取数据
+$  git clone      从远程仓库拷贝数据
+```
+#### 安装git，到官网去安装  略
 
-// 安装git，到官网去安装  略
+01. 打开终端，git --version，提示版本号，即安装成功
+02. 创建一个home-work文件夹
+03. cd  **home-work   切换到当前文件夹下 回车
+04. 创建两个文件，app.js  index.html
+05. git init  初始化一个空的仓库
+06. git config --global user.name 'xieerduos'  全局配置git，配置用户名
+07. git config --global user.email '1454598684@qq.com'  全局配置git，配置email
+可以随 时改用户名和email，用相应的命令就可以了
+08. git  add index.html 当你按回车的时候就添加到相应的队列里面去了
+09. git status   查看文件是否被添加呢   按回车后，会看到两个文件，一个被添加了（绿色）一个没有被添加的
+ (use "git rm --cached <file>..." to unstage)  如果你想删除，上传的文件的话是，使用git rm --cached <file>
+10. git  rm --cached index.html 回车，将index.html从上传队列里移除（remove）
+11. git status  查看状态
+12. git add *.html  上传某一类文件
+13. git status  查看状态
+14. git rm --cached index.html  从队列中移除index.html
+15. git status  查看状态
+16. git add .   将所有的文件提交到队列里去
+17. git status  查看状态
 
-// 01.打开终端，git --version，提示版本号，即安装成功
-// 02.创建一个home-work文件夹
-// 03.cd  **home-work   切换到当前文件夹下 回车
-// 04.创建两个文件，app.js  index.html
-// 05.git init  初始化一个空的仓库
-// 06.git config --global user.name 'xieerduos'  全局配置git，配置用户名
-// 07.git config --global user.email '1454598684@qq.com'  全局配置git，配置email
-// 可以随时改用户名和email，用相应的命令就可以了
-// 08.git  add index.html 当你按回车的时候就添加到相应的队列里面去了
-// 09.git status   查看文件是否被添加呢   按回车后，会看到两个文件，一个被添加了（绿色）一个没有被添加的
-//  (use "git rm --cached <file>..." to unstage)  如果你想删除，上传的文件的话是，使用git rm --cached <file>
-// 10.git  rm --cached index.html 回车，将index.html从上传队列里移除（remove）
-// 11.git status  查看状态
-// 12.git add *.html  上传某一类文件
-// 13.git status  查看状态
-// 14.git rm --cached index.html  从队列中移除index.html
-// 15.git status  查看状态
-// 16.git add .   将所有的文件提交到队列里去
-// 17.git status  查看状态
+18. 把home-work里面的文件打开（sublime，vscode）
+19. 给index.html添加内容
+20. 返回终端输入：git status
+21. 发现有一个“ modified:   index.html ”， index.html发生了修改的意思
+22. git add .   再此把所有的文件添加到队里里面
+23. git status  查看状态
 
-// 18.把home-work里面的文件打开（sublime，vscode）
-// 19.给index.html添加内容
-// 20.返回终端输入：git status
-// 21.发现有一个“ modified:   index.html ”， index.html发生了修改的意思
-// 22.git add .   再此把所有的文件添加到队里里面
-// 23.git status  查看状态
-
-// 24.git commit  提交确认
-// 25.回车     回车之后会进入一个页面，让你备注当前你所提交的信息
+24. git commit  提交确认
+25. 回车     回车之后会进入一个页面，让你备注当前你所提交的信息
 // 就是说，现在你写完了，你要把文件提交到你的仓库里面，你要备注一下，提交的是什么，让别人也知道，你提交的是什么
-// 26.在页面的顶端写入备注信息，
-// 27.Ctrl + C   然后在输入  :wq  退出
-// 28.你会退回终端，然后发现 
+26. 在页面的顶端写入备注信息，
+27. Ctrl + C   然后在输入  :wq  退出
+28. 你会退回终端，然后发现 
 // [master (root-commit) 40d4971] first commit
 //  2 files changed, 12 insertions(+)
 //  create mode 100644 app.js
