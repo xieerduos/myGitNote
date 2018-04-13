@@ -452,14 +452,45 @@ $  git clone      从远程仓库拷贝数据
 
  已经解决了！
 ```
-// 71.到 GitHub，home-work 仓库中，刷新，就会发现，你已经有用了跟本地目录一样的那些文件了
-// 72.touch README.md    这个命令是在Git Bash上面去打的，也可以在文件下直接创建一个README.md文件
-// 73.到README.md中，写入#myapp this is git ....   #开头是.md的语法
-// 74.git status  查看
-// 75.git add .  把README.md给添加到队列里面去
-// 76.git commit -m 'README.md changed' 将README.md提交到本地仓库，并且备注
-// 77.git push   将本地仓库push到远程仓库中
-// 在这里，就不需要进行连接了，直接使用push，就自动找到对应的仓库。
+71. 到 GitHub，home-work 仓库中，刷新，就会发现，你已经有用了跟本地目录一样的那些文件了
+```s
+    $  start iexplore  https://www.github.com/xieerduos/home-work   命令行方式 打开IE浏览器，你的就把 xieerduos 换成你自己的(github)用户名.
+```
+72. touch README.md    这个命令是在Git Bash上面去打的，也可以在文件下直接创建一个 README.md 文件
+```s
+    在 cmd 或者 powershell
+    $ echo >README.md  "# myapp this is git ..."    // 意思是，创建一个 README.md 文件，被覆盖式写入 "# myapp ..." 
+
+    或者在 Git Bash 中 ,输入
+    touch README.md  
+```
+73. 到 README.md 中，写入 # myapp this is git ....   # 开头是 .md 的语法
+74. 
+```s
+    $  git status  查看
+```
+75. 
+```s
+    $  git add .  把README.md给添加到队列里面去
+```
+76. 
+```s
+    $  git commit -m 'README.md changed' 将 README.md 提交到本地仓库，并且备注
+```
+77. 
+```s
+    $  git push   将本地仓库push到远程仓库中
+    在这里，就不需要进行连接了，直接使用push，就自动找到对应的仓库。
+    
+
+    当我输入  git push 的时候
+    PS E:\项目文件\02.Git> git push
+    fatal: HttpRequestException encountered.
+    发送请求时出错。
+    Username for 'https://github.com': xieerduos   <-----------写入 github 用户名 然后回车
+    Password for 'https://xieerduos@github.com':   <-----------这里输入密码，注意，输入密码不会有任何提示，输入正确了，按回车就可以了，如果提交成功会 有如下提示
+    
+```
 // 78.回到GitHub远程仓库，进入home work仓库，刷新，在底部，你会发现，显示着你刚刚在README.md的内容，你可以在README.md里面写一些对你的项目的描述，其实其他人的GitHub里面也会有一些，对当前项目的介绍什么的，当前项目怎么启动等等！
 // 79.然后可以做的是什么呢？克隆一个仓库！
 // 如果说，你想把远程仓库内容克隆到你的本地的话，在仓库右边有一个绿色的按钮，叫Clone or download。
