@@ -489,91 +489,119 @@ $  git clone      从远程仓库拷贝数据
     发送请求时出错。
     Username for 'https://github.com': xieerduos   <-----------写入 github 用户名 然后回车
     Password for 'https://xieerduos@github.com':   <-----------这里输入密码，注意，输入密码不会有任何提示，输入正确了，按回车就可以了，如果提交成功会 有如下提示
+
+    PS E:\项目文件\02.Git> git push
+    fatal: HttpRequestException encountered.
+    发送请求时出错。
+    Username for 'https://github.com': xieerduos
+    Password for 'https://xieerduos@github.com':     <---- 输入密码， 回车
     
+    Counting objects: 3, done.
+    Delta compression using up to 4 threads.
+    Compressing objects: 100% (3/3), done.
+    Writing objects: 100% (3/3), 1006 bytes | 503.00 KiB/s, done.
+    Total 3 (delta 2), reused 0 (delta 0)
+    remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+    To https://github.com/xieerduos/myGitNote.git
+    9a990e0..f6821e0  master -> master
+    
+    以上就是 上传成功的提示了 。。。
 ```
-// 78.回到GitHub远程仓库，进入home work仓库，刷新，在底部，你会发现，显示着你刚刚在README.md的内容，你可以在README.md里面写一些对你的项目的描述，其实其他人的GitHub里面也会有一些，对当前项目的介绍什么的，当前项目怎么启动等等！
-// 79.然后可以做的是什么呢？克隆一个仓库！
-// 如果说，你想把远程仓库内容克隆到你的本地的话，在仓库右边有一个绿色的按钮，叫Clone or download。
-// 单击按钮，会出现一个地址，再点击地址后面的按钮，拷贝一些地址。
-// 80.拷贝完了之后，回到终端（Git Bash）
-// 81.在桌面（或者其他地方）创建一个文件夹，叫myapp2（名字自己起，英文的），
-// 然后在终端（Git Bash）上面输入cd  然后再把myapp2拖到终端来  然后回车
-// 82.git clone https://github.com/xieerduos/home-work.git  地址是你刚刚在GitHub复制的那个地址。如果复制不了，那么就 手动输入吧
-// 83.打开myapp2发现你就有了一个一模一样的仓库（home-work）了
-// 这就是怎么去克隆
+78. 回到 GitHub 远程仓库，进入 home-work 仓库，刷新，在底部，你会发现，显示着你刚刚在 README.md 的内容，你可以在README.md 里面写一些对你的项目的描述，其实其他人的 GitHub 里面也会有一些，对当前项目的介绍什么的，当前项目怎么启动等等！
+#####  克隆仓库
+79. 然后可以做的是什么呢？克隆一个仓库！
+ 如果说，你想把远程仓库内容克隆到你的本地的话，在仓库右边有一个绿色的按钮，叫 Clone or download。
+ 单击按钮，会出现一个地址，再点击地址后面的按钮，拷贝一些地址。
 
-// 以上讲了，git以及git常用的命令
+```s
+    $ cd desktop   回到桌面
+    $ mkdir myapp2  创建文件夹
+    $ cd myapp2  
+    $ git init  初始化仓库
+    $ git clone https://github.com/xieerduos/home-work.git     克隆仓库
+```
+80. 拷贝完了之后，回到终端（Git Bash）
+81. 在桌面（或者其他地方）创建一个文件夹，叫 myapp2 （名字自己起，英文的），
+  然后在终端（Git Bash）上面输入 cd  然后再把 myapp2 拖到终端来  然后回车
+82. git clone https://github.com/xieerduos/home-work.git  地址是你刚刚在 GitHub 复制的那个地址。如果复制不了，那么就 手动输入吧
+83. 打开 myapp2 发现你就有了一个一模一样的仓库（home-work）了
+#### 这就是怎么去克隆
 
-// 以下讲的是，如何使用GitHub给我们提供的客户端，进行数据的存储，本地的仓库存储，以及远程的仓库存储。
+#### 以上讲了，git以及git常用的命令
 
-// 84.GitHub是什么？
-// GitHub是借助Git管理代码的平台
-//      1.Git是代码管理工具
-//      2.GitHub是基于Git实现的代码管理平台，Github是一个平台，需要做的是存储对应的仓库里面的代码，
-// 85.GitHub的使用流程
-//      1.在GitHub官网创建账号
-//      2.创建远程仓库（用来存储代码）
-//      3.安装GitHub客户端
-//      4.登录客户端并克隆仓库
-//      5.在本地仓库中存储数据
-//      6.提交数据并备注信息
-//      7.同步本地数据到远程仓库
-// 86.安装客户端  到官网去下载！ 地址：Desktop.github.com
-// 87.进入 https://github.com 创建一个仓库，这个是特别的仓库
-// 这个特别的仓库，就是你的Owner是什么，你特别仓库的名字前面的那部分，就是什么
-// 然后就是现在我的是Owner是xieerduos，这个仓库名呢就是xieerduos.github.io
-// 使用这个仓库的好处是什么？可以使用它作为一个服务器，可以把你的作品，展示到对应的服务器上面来。
-// 写好仓库名字后，单击最下面的绿色创建按钮，Create repository
-// 88.回到GitHub客户端  当然有登录的状态或没有登录，那么登录就是了
-// 89.找到Clone a repository  按钮，并单击     我第一次打开是，在页面的左边
-// 90.将你的GitHub仓库克隆下来   可以全部克隆下来，也可以找到你想要克隆的仓库。
-// 91.现在克隆刚刚创建的那个特别的仓库，选中-->单击下面Clone按钮
-//    它会把远程的仓库，克隆到本地下面来。克隆的时候可能会让你选择地址，就是你把克隆后放到哪里的意思。
-// 92.当你单击后，发现什么都没有，也没有想老师视频上的那样，但是，在右边有一段话，叫 
-// No local changes，Would you like to open this repository in Explorer?
-// 意思是本地仓库没有变化，您想在资源管理器中打开这个存储库吗？
-// 93.单击open this repository即可打开这个仓库，（其实就是一个文件夹）
-// 94.（这一步多余，可忽略）打开终端（Git Bash）并输入cd加空格--->返回上一个文件夹(就是刚刚open this repository打开的那个文件夹的上一个文件夹)--->选中xieerduos.github.io文件夹（你就是选中你对应的文件夹）--->然后拖到终端（Git Bash）里面 ---->回车
-// 95.找到刚刚保存到本地的那个特备仓库，默认是在，文档--->GitHub--->xieerduos.github.io(名字可能不一样，选中你的仓库名)---->用vscode打开这个文件夹，并且在里面写入一个文件index.html，并且在html基本结构里，写入一段文字 "this is 我的作品！"
-// 96.这时候，你打开GitHub客户端，你会发现，index.html在里面了！
+#### 以下讲的是，如何使用GitHub给我们提供的客户端，进行数据的存储，本地的仓库存储，以及远程的仓库存储。
+
+
+#### 84. GitHub是什么？
+GitHub是借助Git管理代码的平台
+1. Git是代码管理工具
+2. GitHub是基于Git实现的代码管理平台，Github是一个平台，需要做的是存储对应的仓库里面的代码，
+#### 85.GitHub的使用流程
+1. 在GitHub官网创建账号
+2. 创建远程仓库（用来存储代码）
+3. 安装GitHub客户端
+4. 登录客户端并克隆仓库
+5. 在本地仓库中存储数据
+6. 提交数据并备注信息
+7. 同步本地数据到远程仓库
+
+86. 安装客户端  到官网去下载！ 地址：[https://Desktop.github.com]
+87. 进入 [https://github.com] 创建一个仓库，这个是特别的仓库
+```t
+    这个特别的仓库，就是你的 Owner 是什么，你特别仓库的名字前面的那部分，就是什么
+    然后就是现在我的是 Owner 是 xieerduos，这个仓库名呢就是 xieerduos.github.io
+    使用这个仓库的好处是什么？可以使用它作为一个服务器，可以把你的作品，展示到对应的服务器上面来。
+    写好仓库名字后，单击最下面的绿色创建按钮，Create repository
+```
+88. 回到 GitHub 客户端  当然有登录的状态或没有登录，那么登录就是了
+89. 找到 Clone a repository  按钮，并单击     我第一次打开是，在页面的左边
+90. 将你的 GitHub 仓库克隆下来   可以全部克隆下来，也可以找到你想要克隆的仓库。
+91. 现在克隆刚刚创建的那个特别的仓库，选中 --> 单击下面 Clone 按钮
+   它会把远程的仓库，克隆到本地下面来。克隆的时候可能会让你选择地址，就是你把克隆后放到哪里的意思。
+92. 当你单击后，发现什么都没有，也没有想老师视频上的那样，但是，在右边有一段话，叫 
+    No local changes，Would you like to open this repository in Explorer?
+    意思是本地仓库没有变化，您想在资源管理器中打开这个存储库吗？
+93. 单击open this repository即可打开这个仓库，（其实就是一个文件夹）
+94. （这一步多余，可忽略）打开终端（Git Bash）并输入cd加空格 ---> 返回上一个文件夹(就是刚刚open this repository打开的那个文件夹的上一个文件夹)--->选中xieerduos.github.io文件夹（你就是选中你对应的文件夹）--->然后拖到终端（Git Bash）里面 ---->回车
+95. 找到刚刚保存到本地的那个特备仓库，默认是在，文档--->GitHub--->xieerduos.github.io(名字可能不一样，选中你的仓库名)---->用vscode打开这个文件夹，并且在里面写入一个文件index.html，并且在html基本结构里，写入一段文字 "this is 我的作品！"
+96. 这时候，你打开GitHub客户端，你会发现，index.html在里面了！
 // 然后在客户端的左侧有一个提示，" 1 changed file "
-// 97.在客户端的左下角有一个，Summary（概括的意思）输入框，这个是必须写的；下面有一个Description（形容，描述，选填）文本域。在Summary中写入"我的作品"
-// 98.单击Commit to master   意思是，把这个这个index.html文件提交到本地仓库里面去  
-// 99.单击后，客户端，右边的显示会消失，左边也显示为“0 changed files”
-// 100.然后单击客户端左边的一个上面菜单栏的，Push origin按钮单击
-// 单击后，会把文件推送到，远程的特殊仓库xieerduos.github.io中
-// 101.打开这个GitHub.com中的xieerduos.github.io仓库，刷新就可以看到我们刚刚同步上来的index.html文件了
+97. 在客户端的左下角有一个，Summary（概括的意思）输入框，这个是必须写的；下面有一个 Description （形容，描述，选填）文本域。在 Summary 中写入"我的作品"
+98. 单击 Commit to master   意思是，把这个这个 index.html 文件提交到本地仓库里面去  
+99. 单击后，客户端，右边的显示会消失，左边也显示为 “0 changed files”
+100. 然后单击客户端左边的一个上面菜单栏的，Push origin 按钮单击
+    单击后，会把文件推送到，远程的特殊仓库 xieerduos.github.io 中
+101. 打开这个 GitHub.com 中的 xieerduos.github.io 仓库，刷新就可以看到我们刚刚同步上来的 index.html 文件了
 
-// 102.刚刚我们做的这个特别的仓库，有什么特别之处呢？
-// 103.它的特别之处就是我们可以把它当做是一个服务器。
-// 104.服务器的地址是：https://xieerduos.github.io/  (你的就是你对应的仓库地址了，这个是我的)
-// 105.在浏览器地址栏输入：https://xieerduos.github.io/ 回车，就可以看到了，“ this is 我的作品 ”！  这个其实就是，我们刚刚写的html。这样子，我们可以把我们的作品，上传到GitHub仓库里面，也可以分享给其他的好友们。
-// 106.如果你有多个作品的话，那么你只需要在特殊的本地仓库里面创建文件夹，然后在地址上面加上那个文件夹的名字即可。
-// 107.比如我现在特殊的本地仓库里，创建一个project2，并且在里面写index2.html，内容也是index2.html。，
-// 108.GitHub客户端，在Summary写入“作品index2”，然后按下 Commit to master 按钮，然后在右边上面的，Push origin按钮单击，将这个文件推送到远程仓库中
-// 109.我在地址栏上面写，https://xieerduos.github.io/project2/index2.html 就可以显示页面了
+102. 刚刚我们做的这个特别的仓库，有什么特别之处呢？
+103. 它的特别之处就是我们可以把它当做是一个服务器。
+104. 服务器的地址是：https://xieerduos.github.io/  (你的就是你对应的仓库地址了，这个是我的)
+105. 在浏览器地址栏输入：https://xieerduos.github.io/ 回车，就可以看到了，“ this is 我的作品 ”！  这个其实就是，我们刚刚写的html。这样子，我们可以把我们的作品，上传到GitHub仓库里面，也可以分享给其他的好友们。
+106. 如果你有多个作品的话，那么你只需要在特殊的本地仓库里面创建文件夹，然后在地址上面加上那个文件夹的名字即可。
+107. 比如我现在特殊的本地仓库里，创建一个 project2 ，并且在里面写 index2.html，内容也是 index2.html 。，
+108. GitHub客户端，在Summary写入“作品 index2 ”，然后按下 Commit to master 按钮，然后在右边上面的，Push origin按钮单击，将这个文件推送到远程仓库中
+109. 我在地址栏上面写，https://xieerduos.github.io/project2/index2.html 就可以显示页面了
 
-// 以上是，可以本地仓库的使用
+    以上是，可以本地仓库的使用
 
-// 110.现在，我们使用的服务器，是github.io，一看就是github的服务器了，如果我们想要一个个性化的服务器，怎么办？
-// 111.自己看视频！恭喜你已经学完了！
-
-
+110. 现在，我们使用的服务器，是 github.io，一看就是 github 的服务器了，如果我们想要一个个性化的服务器，怎么办？
+111. 自己看视频！恭喜你已经学完了！
 
 
-// 删除github仓库里面的某个文件夹
+#### 删除github仓库里面的某个文件夹
+```s
+    $  git rm -h
+        用法：git rm [<选项>] [--] <文件>...
+        -n, --dry-run                 演习
+        -q, --quiet                    不列出删除的文件
+        --cached                      只从索引区删除
+        -f, --force                     忽略文件更新状态检查
+        -r                                  允许递归删除
+        --ignore-unmatch      即使没有匹配，也以零状态退出
 
-//    $ git rm -h
-// 用法：git rm [<选项>] [--] <文件>...
-// -n, --dry-run                 演习
-// -q, --quiet                    不列出删除的文件
-// --cached                      只从索引区删除
-// -f, --force                     忽略文件更新状态检查
-// -r                                  允许递归删除
-// --ignore-unmatch      即使没有匹配，也以零状态退出
+        我的操作历史：
 
-// 我的操作历史：
-
-// 1     git rm -r --cached  "React版单页面音乐播放器"
-// 2     git commit -m "remove new gitignore directory"
-// 3     git push origin master   
+        1  git rm -r --cached  "React版单页面音乐播放器"
+        2  git commit -m "remove new gitignore directory"
+        3  git push origin master   
+```
