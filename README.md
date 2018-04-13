@@ -64,44 +64,109 @@ $  git clone      从远程仓库拷贝数据
 ```s
     $  git --version     提示版本号，即安装成功
 ```
-02. 创建一个home-work文件夹
-03. cd  **home-work   切换到当前文件夹下 回车
+02. 
+```s
+    $  mkdir my-git   创建一个 my-git 仓库（文件夹） 
+```
+03. 
+```s
+    $  cd  home-work   切换到当前文件夹下 回车
+```
 04. 创建两个文件，app.js  index.html
-05. git init  初始化一个空的仓库
-06. git config --global user.name 'xieerduos'  全局配置git，配置用户名
-07. git config --global user.email '1454598684@qq.com'  全局配置git，配置email
-可以随 时改用户名和email，用相应的命令就可以了
-08. git  add index.html 当你按回车的时候就添加到相应的队列里面去了
-09. git status   查看文件是否被添加呢   按回车后，会看到两个文件，一个被添加了（绿色）一个没有被添加的
- (use "git rm --cached <file>..." to unstage)  如果你想删除，上传的文件的话是，使用git rm --cached <file>
-10. git  rm --cached index.html 回车，将index.html从上传队列里移除（remove）
-11. git status  查看状态
-12. git add *.html  上传某一类文件
-13. git status  查看状态
-14. git rm --cached index.html  从队列中移除index.html
-15. git status  查看状态
-16. git add .   将所有的文件提交到队列里去
-17. git status  查看状态
+```s
+    $  echo >app.js      回车， Ctrl + C 
+    $  echo >index.html  回车， Ctrl + C 
+```
+05. 初始化一个空的仓库
+```s
+    $  git init  
+```
+06. 全局配置git，配置用户名
+```s
+    $  git config --global user.name 'xieerduos'  
+```
+07. 全局配置git，配置email
+```s
+    $  git config --global user.email '1454598684@qq.com'  
+```
+>>>  可以随 时改用户名和email，用相应的命令就可以了
+08. 
+```s
+    $  git  add index.html 当你按回车的时候就添加到相应的队列里面去了
+```
+09.  查看文件是否被添加   按回车后，会看到两个文件，一个被添加了（绿色）一个没有被添加的
+```s
+    $  git status  
+
+```
+>>>    (use "git rm --cached <file>..." to unstage)如果你想删除，上传的文件的话是，使用 $ git rm --cached <file>
+10. 将index.html从上传队列里移除（remove）
+```s
+    $  git  rm --cached index.html 回车，
+```
+11. 查看状态
+```s
+    $  git status  
+```
+12. 
+```s
+    $  git add *.html  上传某一类文件
+```
+13. 
+```s
+    $  git status  查看状态
+```
+14. 
+```s
+    $  git rm --cached index.html  从队列中移除index.html
+```
+15. 
+```s
+    $  git status  查看状态
+```
+16. 
+```s
+    $  git add .   将所有的文件提交到队列里去
+```
+17. 
+```s
+    $  git status  查看状态
+```
 
 18. 把home-work里面的文件打开（sublime，vscode）
+```s
+    $  code .   // 在此文件夹下打开 vscode  ，也可以 $  atom .   在此处打开 atom 。sublime我不知道怎么打开。。  
+```
 19. 给index.html添加内容
-20. 返回终端输入：git status
+20. 返回终端输入：
+```s
+    $  git status
+```
 21. 发现有一个“ modified:   index.html ”， index.html发生了修改的意思
-22. git add .   再此把所有的文件添加到队里里面
-23. git status  查看状态
-
-24. git commit  提交确认
+22. 
+```s
+    $  git add .   再此把所有的文件添加到队里里面
+```
+23. 
+```s
+    $  git status  查看状态
+```
+24. 
+```s
+    $  git commit  提交确认
+```
 25. 回车     回车之后会进入一个页面，让你备注当前你所提交的信息
-// 就是说，现在你写完了，你要把文件提交到你的仓库里面，你要备注一下，提交的是什么，让别人也知道，你提交的是什么
+>>> 就是说，现在你写完了，你要把文件提交到你的仓库里面，你要备注一下，提交的是什么，让别人也知道，你提交的是什么
 26. 在页面的顶端写入备注信息，
 27. Ctrl + C   然后在输入  :wq  退出
-28. 你会退回终端，然后发现 
-// [master (root-commit) 40d4971] first commit
-//  2 files changed, 12 insertions(+)
-//  create mode 100644 app.js
-//  create mode 100644 index.html
-// 说明这两个文件已经被提交上去了
-
+28. 你退回终端，然后发现 
+```txt
+ [master (root-commit) 40d4971] first commit
+  2 files changed, 12 insertions(+)
+  create mode 100644 app.js
+  create mode 100644 index.html
+ 说明这两个文件已经被提交上去了
+```
 // 29.git status  查看状态，看看有没有提交上去（终端出入，“nothing to commit,working tree clean” 意思是你的所有文件已经被添加到本地仓库里面去了。
 // 30.进入app.js 输入console.log('hello world') 然后保存  (意思是修改app.js文件)
 // 31.git status  发现 modified： app.js    意思是app.js已经被修改
